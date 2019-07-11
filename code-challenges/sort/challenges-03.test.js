@@ -212,11 +212,10 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 const sortSchedule = (arr) => {
   let order = {Monday:1, Tuesday:2, Wednesday:3, Thursday:4, Friday:5};
   arr.sort((a,b)=>{
-    a = order[a.dayOfWeek];
-    b = order[b.dayOfWeek];
-    if(a<b){
+
+    if((order[a.dayOfWeek]) <(order[b.dayOfWeek])){
       return -1;
-    }else if(a>b){
+    }else if((order[a.dayOfWeek]) > (order[b.dayOfWeek])){
       return 1;
     }else{
       if(a.start < b.start){
@@ -224,13 +223,7 @@ const sortSchedule = (arr) => {
       }else if(a.start > b.start){
         return 1;
       }else{
-        if((a.end-a.start)<(b.end-b.start)){
-          return -1;
-        }else if((a.end-a.start)>(b.end-b.start)){
-          return 1;
-        }else{
-          return 0;
-        }
+        return a.end > b.end;
       }
     }
   });
