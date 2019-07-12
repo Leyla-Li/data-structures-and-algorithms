@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/sort/",
+    "test": "jest --coverage --verbose code-challenges/regularExpressions-01/",
     "watch": "jest --watchAll"
   },
   "keywords": [],
