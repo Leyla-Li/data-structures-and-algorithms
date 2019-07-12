@@ -26,7 +26,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex = /\b[A-Z]([a-z]|[A-Z])*\b/g;
+  let regex = /^[A-Z]([A-Z]|[a-z])+/g;
   return str.match(regex);
 };
 
@@ -37,9 +37,9 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let regex = /\b[A-J][a-z]*\b/g;
-  let new = arr.match(regex);
-  return new;
+  let regex = /^[A-J][a-z]*\b/g;
+  arr.match(regex);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  let regex = /[aeiou]/g;
+  let regex = /[aeiou]/gi;
   return str.replace(regex,'_');
 };
 
@@ -105,7 +105,8 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  let regex = /[a-z]+ells\b/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
