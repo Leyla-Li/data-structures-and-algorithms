@@ -150,8 +150,19 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 ===0){
+        arr.splice(i,1,' ');
+        console.log(arr);
+    }
+}
+  for(let r = 0; r <arr.length; r++){
+    if (item === ' '){
+      arr.splice(r,1);
+    } 
+  };
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -169,8 +180,20 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters < 0){
+    return str;
+  }else if(numberOfCharacters > str.length){
+    return '';
+  }else{
+    let arr = str.split('');  
+    arr.splice(arr.length-numberOfCharacters,numberOfCharacters);
+    console.log(arr);
+    let newStr = arr.join('');
+    console.log(newStr);
+    return newStr;
+  }
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -181,7 +204,10 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+  let arr = str.split(',');
+  arr.forEach((num)=>{
+    total += Number(num);
+  });
   return total;
 };
 
@@ -195,7 +221,28 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+    let arr = [];
+    if(str.match(/a/ig)){
+      arr = str.split('a');
+      str = arr.join('');
+    }
+    if(str.match(/e/ig)){
+        arr = str.split('e');
+        str = arr.join('');
+    }
+    if(str.match(/i/ig)){
+        arr = str.split('i');
+        str = arr.join('');
+    }
+    if(str.match(/o/ig)){
+        arr = str.split('o');
+        str = arr.join('');
+    }
+    if(str.match(/u/ig)){
+        arr = str.split('u');
+        str = arr.join('');
+    }
+    return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -209,7 +256,40 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
+  let arr = [];
+    let vows = [];
+      if(str.match(/a/ig)){
+        arr = str.split('a');
+        str = arr.join('');
+        vows.push('a');
+      }
+      if(str.match(/e/ig)){
+          arr = str.split('e');
+          str = arr.join('');
+          vows.push('e');
+      }
+      if(str.match(/i/ig)){
+          arr = str.split('i');
+          str = arr.join('');
+          vows.push('i');
+      }
+      if(str.match(/o/ig)){
+          arr = str.split('o');
+          str = arr.join('');
+          vows.push('o');
+      }
+      if(str.match(/u/ig)){
+          arr = str.split('u');
+          str = arr.join('');
+          vows.push('u');
+      }
+      let vowStr = vows.join('');
+      console.log(str,vowStr);
+      let result = [];
+      result.push(str);
+      result.push(vowStr);
+      console.log(result);
+      return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
