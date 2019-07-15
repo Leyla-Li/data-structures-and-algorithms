@@ -152,17 +152,10 @@ For example:
 const removeEvenValues = (arr) => {
   for(let i = 0; i < arr.length; i++){
     if(arr[i] % 2 ===0){
-        arr.splice(i,1,' ');
-        console.log(arr);
+        arr.splice(i,1);
+        i -= i;
     }
 }
-  let newArr = [];
-  for(let r = 0; r <arr.length; r++){
-    if (item !== ' '){
-      newArr.push(item);
-    } 
-  };
-  return newArr;
 };
 
 
