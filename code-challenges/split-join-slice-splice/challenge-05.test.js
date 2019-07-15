@@ -256,40 +256,22 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  let arr = [];
-    let vows = [];
-      if(str.match(/a/ig)){
-        arr = str.split('a');
-        str = arr.join('');
-        vows.push('a');
-      }
-      if(str.match(/e/ig)){
-          arr = str.split('e');
-          str = arr.join('');
-          vows.push('e');
-      }
-      if(str.match(/i/ig)){
-          arr = str.split('i');
-          str = arr.join('');
-          vows.push('i');
-      }
-      if(str.match(/o/ig)){
-          arr = str.split('o');
-          str = arr.join('');
-          vows.push('o');
-      }
-      if(str.match(/u/ig)){
-          arr = str.split('u');
-          str = arr.join('');
-          vows.push('u');
-      }
-      let vowStr = vows.join('');
-      console.log(str,vowStr);
-      let result = [];
-      result.push(str);
-      result.push(vowStr);
-      console.log(result);
-      return result;
+  let arr = str.split('');
+    let vow = [];
+    let newStr = '';
+    arr.forEach((item)=>{
+        if(item === 'a' || item === 'e' || item === 'i' || item === 'o' ||item === 'u'){
+            vow.push(item);
+        }else{
+            newStr += item;
+        }
+    });
+    let result =[];
+    let newVow = vow.sort();
+    newVow = newVow.join('');
+    result.push(newStr);
+    result.push(newVow);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
