@@ -156,11 +156,13 @@ const removeEvenValues = (arr) => {
         console.log(arr);
     }
 }
+  let newArr = [];
   for(let r = 0; r <arr.length; r++){
-    if (item === ' '){
-      arr.splice(r,1);
+    if (item !== ' '){
+      newArr.push(item);
     } 
   };
+  return newArr;
 };
 
 
