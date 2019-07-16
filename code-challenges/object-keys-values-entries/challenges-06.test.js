@@ -13,7 +13,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let keys = Object.keys(obj);
+  return keys;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +71,9 @@ let characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  characters.forEach((character)=>{
+      houses.push(character.house);
+  });
   return houses;
 };
 
@@ -87,7 +90,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+    let result = '';
+    arr.forEach((person)=>{
+        if(person.name === character){
+            if(person.children.length !== 0){
+                result = true;
+            }else{
+                result = false;
+            }
+        }
+    });
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +112,19 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+    let result2 = '';
+    arr.forEach((person)=>{
+      let newArr = Object.entries(person);
+      if (newArr[0][1]===character){
+          if(newArr[2][1].length !== 0){
+              result2 = true;
+          }else{
+              result2 = false;
+          }
+      }
+    });
+    return result2;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +134,36 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let characterList =[];
+  arr.forEach((person)=>{
+    characterList.push(person.name);
+    if(person.spouse){
+      characterList.push(person.spouse);
+    }
+    if(person.children.length !== 0){
+        person.children.forEach((child)=>{ 
+            characterList.push(child); 
+        });    
+    }
+  });
+//   arr.forEach((person)=>{
+//       if(!characterList.includes(person.name)){
+//           characterList.push(person.name);
+//       }
+//       if(person.spouse){
+//         if(!characterList.includes(person.spouse)){
+//             characterList.push(person.spouse);
+//         }
+//       }
+//       if(person.children.length !== 0){
+//           person.children.forEach((child)=>{
+//             if(!characterList.includes(child)){
+//                 characterList.push(child);
+//             }
+//           });   
+//       }
+//   }); 
+  return characterList.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
