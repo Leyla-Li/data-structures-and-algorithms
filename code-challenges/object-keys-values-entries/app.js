@@ -46,27 +46,24 @@ let characters = [
     }
   ];
 
-  const totalCharacters = (arr) => {
-    let characterList =[];
+  const houseSize = (arr) => {
+    const sizes = [];
     arr.forEach((person)=>{
-        if(!characterList.includes(person.name)){
-            characterList.push(person.name);
-        }
-        if(person.spouse){
-          if(!characterList.includes(person.spouse)){
-              characterList.push(person.spouse);
-          }
-        }
-        if(person.children.length !== 0){
-            person.children.forEach((child)=>{
-              if(!characterList.includes(child)){
-                  characterList.push(child);
-              }
-            });   
-        }
-    }); 
-    console.log(characterList);
-    return characterList;
+        let personObj = {};
+        let characterList =[];
+        personObj.house = person.house;
+        characterList.push(person.name);
+      if(person.spouse){
+        characterList.push(person.spouse);
+      }
+      if(person.children.length !== 0){
+          person.children.forEach((child)=>{ 
+              characterList.push(child); 
+          }); 
+      personObj.members = characterList.length;
+      sizes.push(personObj);  
+    });
+    return sizes;
   };
 
-  totalCharacters(characters);
+  houseSize(characters);
