@@ -192,8 +192,10 @@ const houseSize = (arr) => {
         }); 
     personObj.members = characterList.length;
     sizes.push(personObj);  
-  });
-  return sizes;
+    console.log(personObj);
+  };
+});
+return sizes;
 };
 
 /* ------------------------------------------------------------------------------------------------
