@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/two-dimensional-arrays/",
+    "test": "jest --coverage --verbose code-challenges/includes-every-substring-charAt/",
     "watch": "jest --watchAll"
   },
   "keywords": [],
