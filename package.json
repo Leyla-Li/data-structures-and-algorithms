@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --verbose code-challenges/includes-every-substring-charAt/",
+    "test": "jest --coverage --verbose code-challenges/combination-of-all-methods/",
     "watch": "jest --watchAll"
   },
   "keywords": [],
