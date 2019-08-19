@@ -176,27 +176,24 @@ All of these objects should be added to an array named "sizes". Return the "size
 For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ... ].
 ------------------------------------------------------------------------------------------------ */
 
+
 const houseSize = (arr) => {
-  const sizes = [];
+  let arrOfSize = [];
   arr.forEach((person)=>{
-      let personObj = {};
-      let characterList =[];
-      personObj.house = person.house;
-      characterList.push(person.name);
+    let objOfHouse = {};
+    objOfHouse.house = person.house;
+    objOfHouse.members = 1;
     if(person.spouse){
-      characterList.push(person.spouse);
-    }
-    if(person.children.length !== 0){
-        person.children.forEach((child)=>{ 
-            characterList.push(child); 
-        }); 
-    personObj.members = characterList.length;
-    sizes.push(personObj);  
-    console.log(personObj);
-  };
-});
-return sizes;
-};
+          objOfHouse.members++;
+        }
+        if(person.children.length !== 0 ){
+          objOfHouse.members += person.children.length;
+        }
+      arrOfSize.push(objOfHouse);
+  });
+  return arrOfSize;
+}
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -218,7 +215,21 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach((person)=>{
+    let objOfHouse = {};
+    objOfHouse.house = person.house;
+    objOfHouse.members = 1;
+    if(person.spouse){
+      if(!deceasedSpouses.includes(person.spouse)){
+        objOfHouse.members++;
+      }
+        }
+        if(person.children.length !== 0 ){
+          objOfHouse.members += person.children.length;
+        }
+        survivors.push(objOfHouse);
+  });
+
   return survivors;
 };
 
