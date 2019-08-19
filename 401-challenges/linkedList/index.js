@@ -6,9 +6,12 @@ const LinkedList = require('./linked-list');
 
 const linkedList = new LinkedList();
 
-linkedList.insertAtHead(10);
-linkedList.insertAtHead(20);
-linkedList.insertAtHead(30);
+linkedList.append(10);
+linkedList.append(20);
+linkedList.append(30);
+
+linkedList.insertBefore(10,1);
+linkedList.insertAfter(20,2);
 
 
 linkedList.traverse();
