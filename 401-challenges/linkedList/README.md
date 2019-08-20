@@ -12,3 +12,6 @@ For others, I used while statement to go through the linked list to add new node
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+
+##White Boarding Solution
+![linkedlist-challenge-whiteboard]("./linkedlist-challenge-whiteboard.jpg")
