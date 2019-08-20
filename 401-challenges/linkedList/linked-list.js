@@ -17,8 +17,6 @@ class LinkedList {
       newHead.next = this.head;
       this.head = newHead;
     }
-    console.log(this);
-    return this;
   }
 
 //Leyla -this is a method to find out if value is in any nodes in the linked list
@@ -31,9 +29,8 @@ class LinkedList {
         }else{
             current = current.next;
         }
-        return false;
-    }
-    return this;
+      }
+      return false;
   }
 
 //Leyla -this method will print out a value representing all the value within the linked list
@@ -41,10 +38,9 @@ class LinkedList {
     let values = '';
     let current = this.head;
     while(current !== null){
-        values += this.value;
+        values += current.value;
         current = current.next;
     }
-    console.log(values);
     return values;
   }
 
@@ -62,6 +58,7 @@ class LinkedList {
     if(this.head === null){
       this.head = new Node(value);
     }else{
+      // console.log('got in append with head',this);
       this.appendHelper(value,this.head);
     }
   }
@@ -69,7 +66,9 @@ class LinkedList {
   appendHelper(value,current){
     //base
     if(current.next === null){
+      console.log('got in appendhelper base')
       current.next = new Node(value);
+      console.log('append to the end of list',this);
       return;
     }else{
       //recursive
@@ -90,7 +89,6 @@ class LinkedList {
       // console.log(current.next.value);
       while(current.next !== null){
         if(this.head.value === value){
-          console.log('got in checking head value');
           let previousHead = this.head;
           const newNode = new Node(newVal);
           this.head = newNode;
@@ -119,6 +117,7 @@ class LinkedList {
     }else{
       let current = this.head;
       while(current.next !== null){
+        console.log('got in checking head value');
         if(current.value === value){
           const newNode = new Node(newVal);
           const originalNext = current.next;
