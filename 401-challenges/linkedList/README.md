@@ -3,9 +3,12 @@ A linked list is a data structure that stores multiple values in a linear fashio
 
 ## Challenge
 This challenge is for building a linked list and creating Insert(), Includes(), toString() methods to it.
+Second challenge is for adding mothods: append(), insertBefore(), insertAfter()
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I use recuresive function for the .append(), which is not that effecient.
+For others, I used while statement to go through the linked list to add new nodes.
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->

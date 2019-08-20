@@ -33,6 +33,7 @@ class LinkedList {
         }
         return false;
     }
+    return this;
   }
 
 //Leyla -this method will print out a value representing all the value within the linked list
@@ -47,14 +48,90 @@ class LinkedList {
     return values;
   }
 
-//   traverse() {
-//    let current = this.head;
-//    while(current !== null) {
-//      console.log(current.value);
-//      // SOMETHING ELSE n_n
-//      current = current.next;
-//    }
-//   }
+  traverse() {
+   let current = this.head;
+   while(current !== null) {
+     console.log(current.value);
+     // SOMETHING ELSE n_n
+     current = current.next;
+   }
+  }
+
+  //Leyla -this method will add a new node to the end of the list recursively
+  append(value){
+    if(this.head === null){
+      this.head = new Node(value);
+    }else{
+      this.appendHelper(value,this.head);
+    }
+  }
+
+  appendHelper(value,current){
+    //base
+    if(current.next === null){
+      current.next = new Node(value);
+      return;
+    }else{
+      //recursive
+      this.appendHelper(value, current.next);
+
+    }
+  }
+
+  insertBefore(value, newVal){
+    if(this.head === null){
+      return;
+    }else if(this.head.next === null){
+      const newNode = new Node(newVal);
+      newNode.next = this.head;
+      return;
+    }else{
+      let current = this.head;
+      // console.log(current.next.value);
+      while(current.next !== null){
+        if(this.head.value === value){
+          console.log('got in checking head value');
+          let previousHead = this.head;
+          const newNode = new Node(newVal);
+          this.head = newNode;
+          newNode.next = previousHead;
+          return;
+        }else if(current.next.value === value){
+          const newNode = new Node(newVal);
+          const originalNext = current.next;
+          current.next = newNode;
+          newNode.next = originalNext;
+          return;
+        }else{
+          current = current.next;
+        }
+      }
+    }
+  }
+
+  insertAfter(value, newVal){
+    if(this.head === null){
+      return;
+    }else if(this.head.next === null){
+      const newNode = new Node(newVal);
+      this.head.next = newNode;
+      return;
+    }else{
+      let current = this.head;
+      while(current.next !== null){
+        if(current.value === value){
+          const newNode = new Node(newVal);
+          const originalNext = current.next;
+          current.next = newNode;
+          newNode.next = originalNext;
+          return;
+        }else{
+          current = current.next;
+        }
+      }
+    }
+  }
+
 }
 
 module.exports = LinkedList;
