@@ -177,9 +177,9 @@ const detectTicTacToeWin = (board) => {
         return true;
     }else if(helpCheck(0,2,1,2,2,2)=== true){
         return true;
-    }else if(0,0,1,1,2,2){
+    }else if(helpCheck(0,0,1,1,2,2)=== true){
         return true;
-    }else if(0,2,1,1,2,0){
+    }else if(helpCheck(0,2,1,1,2,0)=== true){
         return true;
     }else{
         return false;
