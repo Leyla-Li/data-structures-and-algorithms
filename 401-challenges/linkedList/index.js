@@ -9,6 +9,7 @@ const linkedList = new LinkedList();
 linkedList.append(10);
 linkedList.append(20);
 linkedList.append(30);
+linkedList.append(62);
 
 linkedList.insertBefore(10,1);
 linkedList.insertAfter(20,2);
