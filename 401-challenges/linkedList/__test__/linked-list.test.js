@@ -46,6 +46,10 @@ describe('test for linkLists methods', ()=>{
         expect(linkedList.includes(12)).toEqual(true);
     });
 
+    it('can use valueAtK() to check the value of the node at position that is k from the tail node of the linked list', ()=>{
+        // console.log(linkedList);
+        expect(linkedList.valueAtK(0)).toEqual(62);
+    });
 
 
 

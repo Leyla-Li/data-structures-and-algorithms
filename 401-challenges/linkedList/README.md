@@ -3,15 +3,19 @@ A linked list is a data structure that stores multiple values in a linear fashio
 
 ## Challenge
 This challenge is for building a linked list and creating Insert(), Includes(), toString() methods to it.
-Second challenge is for adding mothods: append(), insertBefore(), insertAfter()
+Second challenge is for adding methods: append(), insertBefore(), insertAfter()
+Third challenge is to adding methods to the class. The method should accept a number k as argument and then return the value of the node at the position that is k from the end of the linked list.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 I use recuresive function for the .append(), which is not that effecient.
 For others, I used while statement to go through the linked list to add new nodes.
+For the third challenge, I first go through the linked list to get the index for each of the node and also count how many nodes are there in the linked list. Then I store the index and the value of each node into a object and push the object into an array.
+This cost time: O(n) and space: O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
 ##White Boarding Solution
 ![linkedlist-challenge-whiteboard]("./linkedlist-challenge-whiteboard.jpg")
+![linkedlist-challenge-whiteboard]("./kth-from-end-whiteboard.jpg")
