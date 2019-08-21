@@ -17,5 +17,5 @@ This cost time: O(n) and space: O(n)
 <!-- Description of each method publicly available to your Linked List -->
 
 ##White Boarding Solution
-![linkedlist-challenge-whiteboard]("./linkedlist-challenge-whiteboard.jpg")
-![linkedlist-challenge-whiteboard]("./kth-from-end-whiteboard.jpg")
+![linkedlist-challenge-whiteboard]("./assests/linkedlist-challenge-whiteboard.jpg")
+![linkedlist-challenge-whiteboard]("./assests/kth-from-end-whiteboard.jpg")
