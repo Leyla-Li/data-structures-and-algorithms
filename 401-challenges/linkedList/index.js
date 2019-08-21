@@ -14,6 +14,8 @@ linkedList.append(62);
 linkedList.insertBefore(10,1);
 linkedList.insertAfter(20,2);
 
+linkedList.valueAtK(2);
+
 
 linkedList.traverse();
 

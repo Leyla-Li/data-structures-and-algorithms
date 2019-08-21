@@ -58,7 +58,6 @@ class LinkedList {
     if(this.head === null){
       this.head = new Node(value);
     }else{
-      // console.log('got in append with head',this);
       this.appendHelper(value,this.head);
     }
   }
@@ -66,9 +65,7 @@ class LinkedList {
   appendHelper(value,current){
     //base
     if(current.next === null){
-      console.log('got in appendhelper base')
       current.next = new Node(value);
-      console.log('append to the end of list',this);
       return;
     }else{
       //recursive
@@ -117,7 +114,6 @@ class LinkedList {
     }else{
       let current = this.head;
       while(current.next !== null){
-        console.log('got in checking head value');
         if(current.value === value){
           const newNode = new Node(newVal);
           const originalNext = current.next;
@@ -129,6 +125,45 @@ class LinkedList {
         }
       }
     }
+  }
+
+  valueAtK(k){
+    let current = this.head;
+    let arrOfValues = [];
+    let idx = 0;
+    let length = 0;
+    let result = null;
+    if(k < 0){
+      console.log('k is not a valid number');
+      return;
+    }else{
+      if(this.head === null){
+        console.log('linked list is empty');
+        return;
+      }else{
+        while(current !== null){
+          let thisNode = {};
+          thisNode.value = current.value;
+          thisNode.index = idx;
+          idx++;
+          length++;
+          current = current.next;
+          arrOfValues.push(thisNode);
+        }
+        if(k >= length){
+          console.log('k is bigger than or equal to the length of the linked list');
+        }else{
+          let idxFound = length - 1 - k;
+          arrOfValues.forEach(node=>{
+            if(node.index === idxFound){
+              console.log('got in value at k and value is ',node.value);
+              result = node.value;
+            }
+          }); 
+        }
+      }
+    }
+    return result;
   }
 
 }
