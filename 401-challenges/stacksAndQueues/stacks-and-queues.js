@@ -1,102 +1,103 @@
 'use strit';
 
-class Node{
-    constructor(value){
-        this.head = value;
-        this.next = null;
-    }
-}
+const LinkedList = require('./linked-list');
+// const Node = require('./node');
 
 class Stack{
-    top = new Node();
+    constructor(){
+        this.storage = new LinkedList();
+        this.top = this.storage.head;
+    }
 
     //push a node to the top of the stack
     push(value){
-        // let newNode = new Node(value);
-        if(!top.head){
-            top.head = newNode;
-        }else{
-            let current = top.head;
-            while(current.next){
-                current = current.next;
-            }
-            current.next = newNode;
-        }
-        return newNode.value;
+        // if(!top.head){
+        //     top.head = newNode;
+        // }else{
+        //     let current = top.head;
+        //     while(current.next){
+        //         current = current.next;
+        //     }
+        //     current.next = newNode;
+        // }
+        // return newNode.value;
+        this.storage.insert(value);
+        this.top = this.storage.head;
     }
 
     //pop a node from the top of the stack
     pop(){
-        if(!top.head){
+        this.top = this.storage.head;
+        // console.log('in the pop method, top and storage',this.top,this.storage);
+        if(!this.top){
             return null;
-        }else if(!top.head.next){
-            let tail = top.head;
-            top.head = null;
-            return tail;
         }else{
-            let current = top.head;
-            while(current.next.next){
-                tail = current.next.next;
-                current = current.next;
-            }
-            current.next = null;
-            return tail.value;
+            let deleted = this.top;
+            this.top = this.top.next;
+            // console.log('got in else in pop, deleted and new top', deleted, this.top);
+            return deleted.value;
         }
     }
 
     //return the top value of the stack
     peek(){
-        if(top.head === null){
-            console.log('This Linked list\'s head is empty');
+        if(this.top === null){
+            // console.log('This Linked list\'s head is empty');
             return null;
         }
         else{
-            return top.head.value;
+            return this.top.value;
         }
     }
 };
 
 class Queue{
-    front = new Node();
-
+    constructor(){
+        this.storage = new LinkedList();
+        this.rear = this.storage.head;
+        this.front = null;
+    }
     //add the given value to the end of the queue with O(1)
     enqueue(value){
-        let newNode = new Node(value);
-        if(!top.head){
-            top.head = newNode;
-        }else{
-            let current = top.head;
-            while(current.next){
-                current = current.next;
-            }
-            current.next = newNode;
-        }
-        return newNode.value;
+        this.storage.insert(value);
     }
 
     //removes the node from the front of the queue and returns the node's value
     dequeue(){
-        if(!top.head){
+        this.rear = this.storage.head;
+        if(!this.rear){
             console.log('this is an empty queue');
             return null;
-        }else if(!top.head.next){
-            let deleted = top.head;
-            top.head = null;
-            return deleted;
+        }else if(!this.rear.next){
+            let deleted = this.rear;
+            this.rear = null;
+            return deleted.value;
+        }else if(!this.rear.next.next){
+            let deleted = this.rear.next;
+            return deleted.value;
         }else{
-            let previousHead = top.head;
-            top.head = top.head.next;
-            return previousHead.value;
+            let current = this.rear;
+            while(current.next.next){
+                current = current.next;
+            }
+            let deleted = current.next.value;
+            current.next = null;
+            return deleted;
         }
     }
 
     //find the front of the queue and return its value
-    peek(){
-        if(!top.head){
+    peekQ(){
+        this.rear = this.storage.head;
+        if(!this.rear){
             console.log('this is an empty queue');
             return null;
         }else{
-            return top.head.value;
+            let current = this.rear;
+            while(current.next){
+                current = current.next;
+            }
+            return current.value;
         }
     }    
 
