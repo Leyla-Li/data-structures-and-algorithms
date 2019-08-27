@@ -11,16 +11,6 @@ class Stack{
 
     //push a node to the top of the stack
     push(value){
-        // if(!top.head){
-        //     top.head = newNode;
-        // }else{
-        //     let current = top.head;
-        //     while(current.next){
-        //         current = current.next;
-        //     }
-        //     current.next = newNode;
-        // }
-        // return newNode.value;
         this.storage.insert(value);
         this.top = this.storage.head;
     }

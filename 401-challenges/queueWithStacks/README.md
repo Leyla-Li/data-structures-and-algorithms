@@ -7,10 +7,13 @@ This is a challenge to use two stacks with push/pop/peek methods in the class ca
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I used push and pop methods from the stack. the O of space is 1, and O of time is n for dequeue. For enqueue both O are 1.
 
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+<!-- Description of each method publicly available to your PseudoQueue -->
+I used the push methods from the stack class since for enqueue and push they both add the new value to the head of the LinkedList.
+For dequeue, I push all the nodes in stackA to stackB and then pop the top node fron stackB.
 
 ##White Boarding Solution
 ![queue-with-stack-challenge-whiteboard]("./assests/queue-with-stack-challenge.jpg")
