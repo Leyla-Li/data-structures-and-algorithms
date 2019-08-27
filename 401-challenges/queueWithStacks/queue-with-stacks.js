@@ -21,6 +21,7 @@ class pseudoQueue{
                 this.stackB.push(nodeToPop.value);
             }
         }
+        return this.stackB.pop();
     }
 }
 
