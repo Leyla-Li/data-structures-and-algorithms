@@ -6,12 +6,13 @@
   "scripts": {
     "test": "jest --coverage --verbose code-challenges/",
     "watch": "jest --watchAll",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint '**/*.js'"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "jest": "^24.1.0"
+    "eslint": "^6.2.2",
+    "jest": "^24.9.0"
   }
 }
