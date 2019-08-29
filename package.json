@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose code-challenges/",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "lint": "eslint '**/*.js'",
   },
   "keywords": [],
   "author": "",
