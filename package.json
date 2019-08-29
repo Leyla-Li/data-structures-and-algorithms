@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage --verbose code-challenges/",
     "watch": "jest --watchAll",
-    "lint": "eslint '**/*.js'",
+    "lint": "eslint '**/*.js'"
   },
   "keywords": [],
   "author": "",
