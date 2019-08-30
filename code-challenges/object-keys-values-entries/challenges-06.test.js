@@ -72,7 +72,7 @@ let characters = [
 const getHouses = (arr) => {
   let houses = [];
   characters.forEach((character)=>{
-      houses.push(character.house);
+    houses.push(character.house);
   });
   return houses;
 };
@@ -90,17 +90,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-    let result = '';
-    arr.forEach((person)=>{
-        if(person.name === character){
-            if(person.children.length !== 0){
-                result = true;
-            }else{
-                result = false;
-            }
-        }
-    });
-    return result;
+  let result = '';
+  arr.forEach((person)=>{
+    if(person.name === character){
+      if(person.children.length !== 0){
+        result = true;
+      }else{
+        result = false;
+      }
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,19 +112,19 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-    let result2 = '';
-    arr.forEach((person)=>{
-      let newArr = Object.entries(person);
-      if (newArr[0][1]===character){
-          if(newArr[2][1].length !== 0){
-              result2 = true;
-          }else{
-              result2 = false;
-          }
+  let result2 = '';
+  arr.forEach((person)=>{
+    let newArr = Object.entries(person);
+    if (newArr[0][1]===character){
+      if(newArr[2][1].length !== 0){
+        result2 = true;
+      }else{
+        result2 = false;
       }
-    });
-    return result2;
-  
+    }
+  });
+  return result2;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,28 +141,28 @@ const totalCharacters = (arr) => {
       characterList.push(person.spouse);
     }
     if(person.children.length !== 0){
-        person.children.forEach((child)=>{ 
-            characterList.push(child); 
-        });    
+      person.children.forEach((child)=>{
+        characterList.push(child);
+      });
     }
   });
-//   arr.forEach((person)=>{
-//       if(!characterList.includes(person.name)){
-//           characterList.push(person.name);
-//       }
-//       if(person.spouse){
-//         if(!characterList.includes(person.spouse)){
-//             characterList.push(person.spouse);
-//         }
-//       }
-//       if(person.children.length !== 0){
-//           person.children.forEach((child)=>{
-//             if(!characterList.includes(child)){
-//                 characterList.push(child);
-//             }
-//           });   
-//       }
-//   }); 
+  //   arr.forEach((person)=>{
+  //       if(!characterList.includes(person.name)){
+  //           characterList.push(person.name);
+  //       }
+  //       if(person.spouse){
+  //         if(!characterList.includes(person.spouse)){
+  //             characterList.push(person.spouse);
+  //         }
+  //       }
+  //       if(person.children.length !== 0){
+  //           person.children.forEach((child)=>{
+  //             if(!characterList.includes(child)){
+  //                 characterList.push(child);
+  //             }
+  //           });
+  //       }
+  //   });
   return characterList.length;
 };
 
@@ -184,16 +184,16 @@ const houseSize = (arr) => {
     objOfHouse.house = person.house;
     objOfHouse.members = 1;
     if(person.spouse){
-          objOfHouse.members++;
-        }
-        if(person.children.length !== 0 ){
-          objOfHouse.members += person.children.length;
-        }
-      arrOfSize.push(objOfHouse);
+      objOfHouse.members++;
+    }
+    if(person.children.length !== 0 ){
+      objOfHouse.members += person.children.length;
+    }
+    arrOfSize.push(objOfHouse);
   });
   return arrOfSize;
-}
-  
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -223,11 +223,11 @@ const houseSurvivors = (arr) => {
       if(!deceasedSpouses.includes(person.spouse)){
         objOfHouse.members++;
       }
-        }
-        if(person.children.length !== 0 ){
-          objOfHouse.members += person.children.length;
-        }
-        survivors.push(objOfHouse);
+    }
+    if(person.children.length !== 0 ){
+      objOfHouse.members += person.children.length;
+    }
+    survivors.push(objOfHouse);
   });
 
   return survivors;

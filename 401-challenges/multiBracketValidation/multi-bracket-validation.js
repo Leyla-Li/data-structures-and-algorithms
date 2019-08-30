@@ -24,6 +24,6 @@ const multiBracketValidation = (input)=>{
       }
     }
   }
-}
+};
 module.exports = multiBracketValidation;
 

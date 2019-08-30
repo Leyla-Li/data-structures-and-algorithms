@@ -12,19 +12,19 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-    let result = 0; 
-    input.forEach((arr)=>{
-      let counted = arr.reduce(function(count, num, idx){
-          if(num === target){
-              count++;
-          }
-          return count;
-      },0);
-      result += counted;
-      return counted;
-    });
-    return result;
-  };
+  let result = 0;
+  input.forEach((arr)=>{
+    let counted = arr.reduce(function(count, num, idx){
+      if(num === target){
+        count++;
+      }
+      return count;
+    },0);
+    result += counted;
+    return counted;
+  });
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -37,16 +37,16 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-    let total = 0;
-    input.forEach((arr)=>{
-        let result = arr.reduce(function(sum,num,idx){
-            sum += num;
-            return sum;
+  let total = 0;
+  input.forEach((arr)=>{
+    let result = arr.reduce(function(sum,num,idx){
+      sum += num;
+      return sum;
     },0);
     total += result;
     return result;
-    });
-    return total;
+  });
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,16 +62,16 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-    let result = [];  
-    input.forEach((arr)=>{
-      let newArr = arr.filter(num=>typeof(num) === 'number' && num%5 ===0);
-      let powerArr = newArr.map(num=>{
-          return Math.pow(2,num);
-      });
-      result.push(powerArr);
-      return powerArr;
+  let result = [];
+  input.forEach((arr)=>{
+    let newArr = arr.filter(num=>typeof(num) === 'number' && num%5 ===0);
+    let powerArr = newArr.map(num=>{
+      return Math.pow(2,num);
     });
-    return result;
+    result.push(powerArr);
+    return powerArr;
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,15 +137,15 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-    let filteredArr = data.filter(person=>{
-        return person.gender === 'female' || person.gender === 'male';
-    });
-    let nameList = filteredArr.reduce(function(name,person){
-      name.push(person.name);
-      return name;
-    },[]);
-    let nameStr = nameList.join(' and ');
-    return nameStr;
+  let filteredArr = data.filter(person=>{
+    return person.gender === 'female' || person.gender === 'male';
+  });
+  let nameList = filteredArr.reduce(function(name,person){
+    name.push(person.name);
+    return name;
+  },[]);
+  let nameStr = nameList.join(' and ');
+  return nameStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,28 +155,28 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-    let nameList = data.map(person=>{
-      return person.name;
-    });
-  
-    let result = nameList.reduce(function(shortest,name){
-      if(shortest === ''){
+  let nameList = data.map(person=>{
+    return person.name;
+  });
+
+  let result = nameList.reduce(function(shortest,name){
+    if(shortest === ''){
+      shortest = name;
+      return shortest;
+    }else{
+      let regex = /[a-z]/ig;
+      let lettersOfName = name.match(regex);
+      let lettersOfShortest = shortest.match(regex);
+      if(lettersOfShortest.length > lettersOfName.length){
         shortest = name;
         return shortest;
       }else{
-        let regex = /[a-z]/ig;
-        let lettersOfName = name.match(regex);
-        let lettersOfShortest = shortest.match(regex); 
-        if(lettersOfShortest.length > lettersOfName.length){
-          shortest = name;
-          return shortest;
-        }else{
-          return shortest;
-        }
+        return shortest;
       }
-    },'');
-    return result;
-  };
+    }
+  },'');
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

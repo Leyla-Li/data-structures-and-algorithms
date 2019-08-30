@@ -26,10 +26,10 @@ const grandTotal = (stores) => {
   let totalHourly = [];
   let addNum = 0;
   for(let i =0; i< stores[0].length; i++){
-      for(let j = 0; j<stores.length; j++){
-          addNum += stores[j][i];
-      }
-    totalHourly.push(addNum);  
+    for(let j = 0; j<stores.length; j++){
+      addNum += stores[j][i];
+    }
+    totalHourly.push(addNum);
     addNum = 0;
   }
   return totalHourly;
@@ -53,7 +53,7 @@ const salesData = (hours, data) => {
     result.push(hourly);
   });
   for(let i =0; i<hours.length;i++){
-      result[i].time = hours[i];
+    result[i].time = hours[i];
   }
   return result;
 };
@@ -77,18 +77,18 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-    let total = 0;
-    arr.forEach((store)=>{
-      if(store.store === 'Pet store'){
-          store.items.forEach((item)=>{
-              if(item.name === 'Treats'){
-                  total += item.quantity;
-              }
-          });
-      }
-    });
-    return total;
-  };
+  let total = 0;
+  arr.forEach((store)=>{
+    if(store.store === 'Pet store'){
+      store.items.forEach((item)=>{
+        if(item.name === 'Treats'){
+          total += item.quantity;
+        }
+      });
+    }
+  });
+  return total;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -110,9 +110,9 @@ The top row of the board is considered row zero and row numbers increase as they
 
 const battleship = (board, row, col) => {
   if(board[row][col] === '#'){
-      return 'hit';
+    return 'hit';
   }else{
-      return 'miss';
+    return 'miss';
   }
 };
 
@@ -127,9 +127,9 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 const calculateProduct = (numbers) => {
   let multiplied = 1;
   numbers.forEach((arr)=>{
-      arr.forEach((num)=>{
-          multiplied *=num;
-      });
+    arr.forEach((num)=>{
+      multiplied *=num;
+    });
   });
   return multiplied;
 };
@@ -151,13 +151,13 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  let numOfDay = 0; 
+  let numOfDay = 0;
   weather.forEach(day=>{
-    let dayTotal = 0; 
+    let dayTotal = 0;
     let dailyAve = 0;
-      day.forEach(num=>{
-          dayTotal+=num;
-      });
+    day.forEach(num=>{
+      dayTotal+=num;
+    });
     dailyAve = dayTotal / day.length;
     numOfDay+=dailyAve;
   });
@@ -185,17 +185,17 @@ const lowestWeeklyAverage = (weather) => {
   let weeklyAve = [];
   let weekTotal =0;
   weather.forEach(week=>{
-      week.forEach(num=>{
-          weekTotal+= num;
-      });
-      weeklyAve.push(weekTotal/week.length);
-      weekTotal =0;
+    week.forEach(num=>{
+      weekTotal+= num;
+    });
+    weeklyAve.push(weekTotal/week.length);
+    weekTotal =0;
   });
   let sortedArr = weeklyAve.sort((a,b)=>{
-      return a-b;
+    return a-b;
   });
   return sortedArr[0];
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -215,12 +215,12 @@ const excel = (str) => {
   let add = 0;
   let result = [];
   arrOfGroup.forEach(group=>{
-      let numArr = group.split(',');
-      numArr.forEach(num=>{
-          add += parseInt(num);
-      });
-      result.push(add);
-      add = 0;
+    let numArr = group.split(',');
+    numArr.forEach(num=>{
+      add += parseInt(num);
+    });
+    result.push(add);
+    add = 0;
   });
   return result;
 };

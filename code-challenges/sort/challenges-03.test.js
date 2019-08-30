@@ -8,7 +8,7 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (arr) => {
   arr.sort((a,b)=>{
-      return b-a;
+    return b-a;
   });
   return arr;
 };
@@ -38,7 +38,7 @@ const sortByLength = (arr) => {
   arr.sort((a,b)=>{
     return a.length - b.length;
   });
-  return arr
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------

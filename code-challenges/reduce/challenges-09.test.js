@@ -10,8 +10,8 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   let arrLength = arr.reduce(function(result,value,idx){
-      result++;
-      return result;
+    result++;
+    return result;
   },0);
   return arrLength;
 };
@@ -73,8 +73,8 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   let nameList = arr.reduce(function(name,person,idx){
-      name.push(person.name);
-      return name;
+    name.push(person.name);
+    return name;
   },[]);
   return nameList;
 };
@@ -89,13 +89,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-    let arr = str.split(''); 
-    let newArr = arr.reduce(function(reversed,normal,idx){
-        reversed[arr.length-idx-1] = normal;
-        return reversed;
-    },[]);
-    let newStr = newArr.join('');
-    return newStr;
+  let arr = str.split('');
+  let newArr = arr.reduce(function(reversed,normal,idx){
+    reversed[arr.length-idx-1] = normal;
+    return reversed;
+  },[]);
+  let newStr = newArr.join('');
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,13 +148,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-    let count = arr.reduce(function(num,person,idx){
-        if(person.children){
-            num = person.children.length+ num;
-        }
-        return num;
-    },0); 
-    return count;
+  let count = arr.reduce(function(num,person,idx){
+    if(person.children){
+      num = person.children.length+ num;
+    }
+    return num;
+  },0);
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -167,12 +167,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   let count = arr.reduce(function(num,item,idx){
-      num++;
-      return num;
+    num++;
+    return num;
   },0);
   let sum = arr.reduce(function(add,value,idx){
-      add += value;
-      return add;
+    add += value;
+    return add;
   },0);
   let result = sum/count;
   return result;
@@ -197,10 +197,10 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   let count = arr.reduce(function(add,num,idx){
-      if(isPrime(num)){
-          add++;
-      }
-      return add;
+    if(isPrime(num)){
+      add++;
+    }
+    return add;
   },0);
   return count;
 };
@@ -246,10 +246,10 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   let obj = arr.reduce(function(match,item,idx){
-      if(item.stat.name === statName){
-          match = item;
-      }
-      return match;
+    if(item.stat.name === statName){
+      match = item;
+    }
+    return match;
   },{});
   return obj;
 };
@@ -266,15 +266,15 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   let arrOfA = arr.filter(obj=>{
-      let regex=/a/ig;
-      return regex.test(obj.name);
+    let regex=/a/ig;
+    return regex.test(obj.name);
   });
   console.log(arrOfA);
   let result = arrOfA.reduce(function(name,person,idx){
     if(person.children){
-        person.children.forEach(child=>{
-            name.push(child);
-        });
+      person.children.forEach(child=>{
+        name.push(child);
+      });
     }
     return name;
   },[]);

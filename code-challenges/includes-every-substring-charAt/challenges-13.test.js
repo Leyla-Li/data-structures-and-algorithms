@@ -11,8 +11,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 const firstLetters = (arr) => {
   let result = [];
   arr.forEach(str=>{
-      let letter = str.substring(0,1);
-      result.push(letter);
+    let letter = str.substring(0,1);
+    result.push(letter);
   });
   return result;
 };
@@ -175,9 +175,9 @@ const sortByDay = (arr) => {
       if (event.includes(day)){
         dayEvent.push(event);
       }
-    })
+    });
     result.push(dayEvent);
-      dayEvent = [];
+    dayEvent = [];
   });
   return result;
 };

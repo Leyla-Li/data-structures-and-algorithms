@@ -16,8 +16,8 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   for(let i=0; i<=str.length;i++){
-      let newStr = str.slice(i);
-      result.push(newStr);
+    let newStr = str.slice(i);
+    result.push(newStr);
   }
   return result;
 };
@@ -80,11 +80,11 @@ const listFoods = (recipe) => {
   let result = [];
   let list = recipe.ingredients;
   list.forEach((ingredient)=>{
-      let idx = ingredient.indexOf(' ');
-      idx = ingredient.indexOf(' ', idx+1);
-      let foodName = ingredient.slice(idx+1);
-      result.push(foodName);
-  });  
+    let idx = ingredient.indexOf(' ');
+    idx = ingredient.indexOf(' ', idx+1);
+    let foodName = ingredient.slice(idx+1);
+    result.push(foodName);
+  });
   return result;
 };
 
@@ -100,18 +100,18 @@ const splitFoods = (recipe) => {
   let result = [];
   let list = recipe.ingredients;
   list.forEach((ingredient)=>{
-      let foodList = [];
-      let foodName = [];
-      foodList = ingredient.split(' ');
-      for(let i =2; i< foodList.length;i++){
-          foodName.push(foodList[i]);
-      }
-      if(foodName.length === 1){
-          result.push(foodName[0]);
-      }else{
-          result.push(foodName.join(' '));
-      }
-  });  
+    let foodList = [];
+    let foodName = [];
+    foodList = ingredient.split(' ');
+    for(let i =2; i< foodList.length;i++){
+      foodName.push(foodList[i]);
+    }
+    if(foodName.length === 1){
+      result.push(foodName[0]);
+    }else{
+      result.push(foodName.join(' '));
+    }
+  });
   return result;
 };
 
@@ -152,10 +152,10 @@ For example:
 const removeEvenValues = (arr) => {
   for(let i = 0; i < arr.length; i++){
     if(arr[i] % 2 ===0){
-        arr.splice(i,1);
-        i -= i;
+      arr.splice(i,1);
+      i -= i;
     }
-}
+  }
 };
 
 
@@ -180,7 +180,7 @@ const removeLastCharacters = (str, numberOfCharacters) => {
   }else if(numberOfCharacters > str.length){
     return '';
   }else{
-    let arr = str.split('');  
+    let arr = str.split('');
     arr.splice(arr.length-numberOfCharacters,numberOfCharacters);
     console.log(arr);
     let newStr = arr.join('');
@@ -216,28 +216,28 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-    let arr = [];
-    if(str.match(/a/ig)){
-      arr = str.split('a');
-      str = arr.join('');
-    }
-    if(str.match(/e/ig)){
-        arr = str.split('e');
-        str = arr.join('');
-    }
-    if(str.match(/i/ig)){
-        arr = str.split('i');
-        str = arr.join('');
-    }
-    if(str.match(/o/ig)){
-        arr = str.split('o');
-        str = arr.join('');
-    }
-    if(str.match(/u/ig)){
-        arr = str.split('u');
-        str = arr.join('');
-    }
-    return str;
+  let arr = [];
+  if(str.match(/a/ig)){
+    arr = str.split('a');
+    str = arr.join('');
+  }
+  if(str.match(/e/ig)){
+    arr = str.split('e');
+    str = arr.join('');
+  }
+  if(str.match(/i/ig)){
+    arr = str.split('i');
+    str = arr.join('');
+  }
+  if(str.match(/o/ig)){
+    arr = str.split('o');
+    str = arr.join('');
+  }
+  if(str.match(/u/ig)){
+    arr = str.split('u');
+    str = arr.join('');
+  }
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -252,21 +252,21 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
   let arr = str.split('');
-    let vow = [];
-    let newStr = '';
-    arr.forEach((item)=>{
-        if(item === 'a' || item === 'e' || item === 'i' || item === 'o' ||item === 'u'){
-            vow.push(item);
-        }else{
-            newStr += item;
-        }
-    });
-    let result =[];
-    let newVow = vow.sort();
-    newVow = newVow.join('');
-    result.push(newStr);
-    result.push(newVow);
-    return result;
+  let vow = [];
+  let newStr = '';
+  arr.forEach((item)=>{
+    if(item === 'a' || item === 'e' || item === 'i' || item === 'o' ||item === 'u'){
+      vow.push(item);
+    }else{
+      newStr += item;
+    }
+  });
+  let result =[];
+  let newVow = vow.sort();
+  newVow = newVow.join('');
+  result.push(newStr);
+  result.push(newVow);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

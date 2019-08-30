@@ -4,3 +4,6 @@
 **/*.min.js
 **/coverage/*
 **/build/*
+**/code-challenges/*
+
+

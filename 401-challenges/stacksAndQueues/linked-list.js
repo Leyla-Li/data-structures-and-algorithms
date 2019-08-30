@@ -7,7 +7,7 @@ class LinkedList {
     this.head = null;
   }
 
-//Leyla - this insert method will insert a new node with the argument value to the linked list Head
+  //Leyla - this insert method will insert a new node with the argument value to the linked list Head
   insert(value){
     const newHead = new Node(value);
 
@@ -19,38 +19,38 @@ class LinkedList {
     }
   }
 
-//Leyla -this is a method to find out if value is in any nodes in the linked list
+  //Leyla -this is a method to find out if value is in any nodes in the linked list
   includes(value){
     let current = this.head;
 
     while(current !== null){
-        if(current.value === value){
-            return true;
-        }else{
-            current = current.next;
-        }
+      if(current.value === value){
+        return true;
+      }else{
+        current = current.next;
       }
-      return false;
+    }
+    return false;
   }
 
-//Leyla -this method will print out a value representing all the value within the linked list
+  //Leyla -this method will print out a value representing all the value within the linked list
   toString(){
     let values = '';
     let current = this.head;
     while(current !== null){
-        values += current.value;
-        current = current.next;
+      values += current.value;
+      current = current.next;
     }
     return values;
   }
 
   traverse() {
-   let current = this.head;
-   while(current !== null) {
-     console.log(current.value);
-     // SOMETHING ELSE n_n
-     current = current.next;
-   }
+    let current = this.head;
+    while(current !== null) {
+      console.log(current.value);
+      // SOMETHING ELSE n_n
+      current = current.next;
+    }
   }
 
   //Leyla -this method will add a new node to the end of the list recursively
@@ -159,7 +159,7 @@ class LinkedList {
               console.log('got in value at k and value is ',node.value);
               result = node.value;
             }
-          }); 
+          });
         }
       }
     }

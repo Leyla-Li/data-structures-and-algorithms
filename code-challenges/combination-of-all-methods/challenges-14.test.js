@@ -10,8 +10,8 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   let result = arr.map(str=>{
-      let newStr = str.charAt(0).toUpperCase() + str.slice(1);
-      return newStr;
+    let newStr = str.charAt(0).toUpperCase() + str.slice(1);
+    return newStr;
   });
   return result;
 };
@@ -88,13 +88,13 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-    let filteredArr = arr.filter(person=>{
-        return person.mass > 77;
-    });
-    
-    let result = filteredArr.map(person=>person.name);
-    return result.join(' - ');
-  };
+  let filteredArr = arr.filter(person=>{
+    return person.mass > 77;
+  });
+
+  let result = filteredArr.map(person=>person.name);
+  return result.join(' - ');
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -111,15 +111,15 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-    let newArr = arr.sort((a,b)=>{
-        if(typeof(a[property])==='string'){
-            return a[property].charCodeAt(0) - b[property].charCodeAt(0);
-        }else{
-            return a[property] - b[property];
-          }
-    });
-    return newArr;
-  };
+  let newArr = arr.sort((a,b)=>{
+    if(typeof(a[property])==='string'){
+      return a[property].charCodeAt(0) - b[property].charCodeAt(0);
+    }else{
+      return a[property] - b[property];
+    }
+  });
+  return newArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -158,34 +158,34 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-    function helpCheck(row1,col1,row2,col2,row3,col3){
-        if(board[row1][col1] === board[row2][col2] && board[row2][col2] === board[row3][col3] && board[row1][col1] !== '' && board[row2][col2] !== '' && board[row3][col3] !== '' ){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    if(helpCheck(0,0,0,1,0,2)=== true){
-        return true;
-    }else if(helpCheck(1,1,1,2,1,3) === true){
-        return true;
-    }else if(helpCheck(2,1,2,2,2,3)=== true){
-        return true;
-    }else if(helpCheck(0,0,1,0,2,0)=== true){
-        return true;
-    }else if(helpCheck(0,1,1,1,2,1)=== true){
-        return true;
-    }else if(helpCheck(0,2,1,2,2,2)=== true){
-        return true;
-    }else if(helpCheck(0,0,1,1,2,2)=== true){
-        return true;
-    }else if(helpCheck(0,2,1,1,2,0)=== true){
-        return true;
+  function helpCheck(row1,col1,row2,col2,row3,col3){
+    if(board[row1][col1] === board[row2][col2] && board[row2][col2] === board[row3][col3] && board[row1][col1] !== '' && board[row2][col2] !== '' && board[row3][col3] !== '' ){
+      return true;
     }else{
-        return false;
+      return false;
     }
-  
-  };
+  }
+  if(helpCheck(0,0,0,1,0,2)=== true){
+    return true;
+  }else if(helpCheck(1,1,1,2,1,3) === true){
+    return true;
+  }else if(helpCheck(2,1,2,2,2,3)=== true){
+    return true;
+  }else if(helpCheck(0,0,1,0,2,0)=== true){
+    return true;
+  }else if(helpCheck(0,1,1,1,2,1)=== true){
+    return true;
+  }else if(helpCheck(0,2,1,2,2,2)=== true){
+    return true;
+  }else if(helpCheck(0,0,1,1,2,2)=== true){
+    return true;
+  }else if(helpCheck(0,2,1,1,2,0)=== true){
+    return true;
+  }else{
+    return false;
+  }
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

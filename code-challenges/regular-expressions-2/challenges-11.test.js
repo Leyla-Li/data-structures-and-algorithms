@@ -11,9 +11,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 const validatePin = (pin) => {
   let regex = /^[0-9]{4}$/g;
   if(regex.test(pin)){
-      return true;
+    return true;
   }else{
-      return false;
+    return false;
   }
 };
 
@@ -60,7 +60,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let regex = /^(\([0-9]{3}\)|[0-9]{3}){1}(\s|-)?[0-9]{3}(\s|-)?[0-9]{4}$/g
+  let regex = /^(\([0-9]{3}\)|[0-9]{3}){1}(\s|-)?[0-9]{3}(\s|-)?[0-9]{4}$/g;
   return regex.test(phoneNumber);
 };
 
@@ -77,8 +77,8 @@ const findTagNames = elements => {
   let regex = /\<\/[a-z0-9]{1,}\>/ig;
   let tagNames = [];
   elements.forEach((element)=>{
-     let arr =element.match(regex);
-     tagNames.push(arr);
+    let arr =element.match(regex);
+    tagNames.push(arr);
   });
   let newTagStr = tagNames.join(',');
   let regex2 = /\/[a-z0-9]+/ig;

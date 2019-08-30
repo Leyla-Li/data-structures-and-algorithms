@@ -14,7 +14,7 @@ const greeting = (word) => {
 
 const speaker = (message, callback) => {
   if(callback){
-      return message.toUpperCase();
+    return message.toUpperCase();
   }
 };
 
@@ -39,7 +39,7 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, addValues) => {
-  for(let i = 1; i <= times; i++){    
+  for(let i = 1; i <= times; i++){
     addValues(arr,num);
   }
   return arr;
@@ -59,15 +59,15 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   if(num % 3 === 2){
-      arr.pop();
+    arr.pop();
   }
 };
 
 const removeElements = (arr, callback) => {
   for(let i = 0; i < arr.length; i++){
-      removeOne(arr[i], arr);
+    removeOne(arr[i], arr);
   }
-  return arr;  
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,10 +77,10 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-    arr.forEach( (value) =>{
-        removeOne(value, arr);
-      });
-    return arr; 
+  arr.forEach( (value) =>{
+    removeOne(value, arr);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ This anonymous function should accept up to three arguments: the element, the in
 const removeWithAnon = (arr) => {
   arr.forEach( (element, index, array) =>{
     if(element % 3 === 2){
-        array.pop();
+      array.pop();
     }
   });
   return arr;
@@ -120,11 +120,11 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  let shoppingList = [];  
+  let shoppingList = [];
   availableItems.forEach((value)=>{
-      if (value.available === true){
-        shoppingList.push(value.name);
-      }
+    if (value.available === true){
+      shoppingList.push(value.name);
+    }
   });
   return shoppingList;
 };
@@ -146,15 +146,15 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   let finalArray = [];
   arr.forEach((value)=>{
-      if(value % 3 === 0 && value % 5 === 0){
-        finalArray.push('Fizz Buzz');
-      }else if(value % 5 === 0){
-        finalArray.push('Buzz');  
-      }else if(value % 3 === 0){
-        finalArray.push('Fizz');
-      }else{
-        finalArray.push(value);
-      }
+    if(value % 3 === 0 && value % 5 === 0){
+      finalArray.push('Fizz Buzz');
+    }else if(value % 5 === 0){
+      finalArray.push('Buzz');
+    }else if(value % 3 === 0){
+      finalArray.push('Fizz');
+    }else{
+      finalArray.push(value);
+    }
   });
   return finalArray;
 };
