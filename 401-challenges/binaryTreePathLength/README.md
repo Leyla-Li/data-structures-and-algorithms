@@ -5,12 +5,13 @@ Tree Vocabulary: The topmost node is called root of the tree. The elements that 
 a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
 
 ## Challenge
-Write a function to write all the leaves in a binary tree
+Write a function takes in the root of a binary tree, a parent node, a child node, isParent (boolean), and a coudnt (number), then return the path length between parent and the child nodes.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-I used while loop to traverse through the tree with Depth First method. Then while popping the top of the stack off, I also check if it has any children. If not, I push it to the array of leaves.
-This cost time: O(n) and space: O(w+h)
+I use depth first recursion to go through the Tree, then to check if the current is parent, if it is, set isParent from false to true, and start the counter.
+Count until it reaches the child node and stop the process, reutrn the count -1.
+This cost time: O(n) and space: O(1)
 
 ##White Boarding Solution
 ![binary-tree-leaves-challenge-whiteboard]("./assests/binary-tree-leaves-challenge.jpg")
