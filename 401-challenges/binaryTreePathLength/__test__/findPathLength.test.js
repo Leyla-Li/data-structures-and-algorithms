@@ -1,8 +1,8 @@
 'use strict';
 
-const test = require('../getLeaves');
+const test = require('../findPathLength');
 const Tree = test.Tree;
-const getLeaves = test.getLeaves;
+const findPathLength = test.findPathLength;
 
 //createing nodes for the tree
 const ten = new Tree(10);
@@ -18,26 +18,26 @@ const twenty = new Tree(20);
 
 
 // Creating the structure of the tree
-five.left = one;
-five.right = two;
+  five.left = one;
+  five.right = two;
 
-ten.left = seven;
-ten.right = five;
+  ten.left = seven;
+  ten.right = five;
 
-seven.left = eleven;
-seven.right = twelve;
+  seven.left = eleven;
+  seven.right = twelve;
 
-one.right = twenty;
+  one.right = twenty;
 
 let root = ten;
 
 
 //testing
-describe('test for getting leaves for the binary tree', ()=>{
+describe('test for calculating a path length of the binary tree', ()=>{
 
-  it('can get all the leaves of the tree', ()=>{
-    let leaves = getLeaves(root);
-    expect(leaves).toEqual([11,12,20,2]);
+  it('can calculate the path length between parent and child nodes', ()=>{
+    let pathLength = findPathLength(root, 10, 12, 0);
+    expect(pathLength).toEqual(2);
 
   });
 
