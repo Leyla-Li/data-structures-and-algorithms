@@ -10,7 +10,7 @@ Write a function takes in the root of a binary tree, a parent node, a child node
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 I use depth first recursion to go through the Tree, then to check if the current is parent, if it is, set isParent from false to true, and start the counter.
-Count until it reaches the child node and stop the process, reutrn the count -1.
+Count until it reaches the child node and stop the process, reutrn the count.
 This cost time: O(n) and space: O(1)
 
 ##White Boarding Solution
