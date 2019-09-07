@@ -18,16 +18,16 @@ const twenty = new Tree(20);
 
 
 // Creating the structure of the tree
-  five.left = one;
-  five.right = two;
+five.left = one;
+five.right = two;
 
-  ten.left = seven;
-  ten.right = five;
+ten.left = seven;
+ten.right = five;
 
-  seven.left = eleven;
-  seven.right = twelve;
+seven.left = eleven;
+seven.right = twelve;
 
-  one.right = twenty;
+one.right = twenty;
 
 let root = ten;
 
