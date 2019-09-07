@@ -10,7 +10,7 @@ Write a function to write all the leaves in a binary tree
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 I used while loop to traverse through the tree with Depth First method. Then while popping the top of the stack off, I also check if it has any children. If not, I push it to the array of leaves.
-This cost time: O(n) and space: O(w+h)
+This cost time: O(n) and space: O(w+h) that could just count (w).
 
 ##White Boarding Solution
 ![binary-tree-leaves-challenge-whiteboard]("./assests/binary-tree-leaves-challenge.jpg")
