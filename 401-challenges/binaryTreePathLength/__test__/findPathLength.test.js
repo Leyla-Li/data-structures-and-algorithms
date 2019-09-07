@@ -36,7 +36,7 @@ let root = ten;
 describe('test for calculating a path length of the binary tree', ()=>{
 
   it('can calculate the path length between parent and child nodes', ()=>{
-    let pathLength = findPathLength(root, 10, 12, 0);
+    let pathLength = findPathLength(root, 10, 12, false,0);
     expect(pathLength).toEqual(2);
 
   });
