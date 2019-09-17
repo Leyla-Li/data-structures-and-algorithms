@@ -8,10 +8,10 @@ function getWords (str){
     
   for(let i = 0; i <= length; i++){
     if(str[i] !== ' ' && i !== length){
-        word += str[i];
+      word += str[i];
     }else{
-        arr1.push(word);
-        word = '';
+      arr1.push(word);
+      word = '';
     }
   }
   return firstRepeated(arr1);
