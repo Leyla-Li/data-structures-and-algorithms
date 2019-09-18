@@ -19,7 +19,7 @@ class Tree {
         if(currentNode.root >= biggest){
           biggest = currentNode.root;
         }
-       if(currentNode.left !== null){
+        if(currentNode.left !== null){
           stack.push(currentNode.left);
         }
         if(currentNode.right !== null){
@@ -28,7 +28,7 @@ class Tree {
       }
       return biggest;
     }
-  };
+  }
 }
 
 module.exports = Tree;
