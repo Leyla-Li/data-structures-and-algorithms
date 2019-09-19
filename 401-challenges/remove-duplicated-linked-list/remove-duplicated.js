@@ -2,11 +2,10 @@
 
 function removeDuplicate(node){
   if(node === null || node.next === null){
-     return node; 
+    return node;
   }
   let m = new Map();
   let keyNum = 0;
-//   m.set(node.value,keyNum);
   let previous = null;
   let current = node;
 

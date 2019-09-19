@@ -1,7 +1,7 @@
 'use strict';
 
 const removeDuplicate = require('../remove-duplicated');
-const LinkedList = require('../linked-list');;
+const LinkedList = require('../linked-list');
 const linkedList = new LinkedList();
 
 describe('test for removing duplicate in a singly linked list', ()=>{
