@@ -6,14 +6,11 @@ This challenge is to write a function to remove any duplicated values in a singl
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-I use recuresive function for the .append(), which is not that effecient.
-For others, I used while statement to go through the linked list to add new nodes.
-For the third challenge, I first go through the linked list to get the index for each of the node and also count how many nodes are there in the linked list. Then I store the index and the value of each node into a object and push the object into an array.
+I loop through the linked list so the time is O(n) and then I also create a hashmap for checking the duplicated values, and the worst cases would be there is no duplicate, then the space would be O(n) too.
 This cost time: O(n) and space: O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
 ##White Boarding Solution
-![linkedlist-challenge-whiteboard]("./assests/linkedlist-challenge-whiteboard.jpg")
-![linkedlist-challenge-whiteboard]("./assests/kth-from-end-whiteboard.jpg")
+![remove-duplicate-challenge-whiteboard]("./assests/linkedlist-challenge-whiteboard.jpg")
