@@ -21,12 +21,6 @@ class Tree {
   }
 
   validation (root, values, intersection) {
-    if(values.has(root.value)){
-      intersection.add(root.value);
-    }else{
-      values.add(root.value);
-    }
-
     if(root.left){
       if(values.has(root.left.value)){
         this.validation (root.left, values, intersection.add(root.left.value));
@@ -43,7 +37,6 @@ class Tree {
         this.validation (root.right, values.add(root.right.value), intersection);
       }
     }
-    console.log('this is the all the values and inter', values, intersection);
     return {'values': values, 'intersection': intersection};
   }
 
@@ -59,8 +52,12 @@ class Tree {
       return {'intersection: ': null, 'union: ': this.getVal(root2, values)};
     }else if(root1 && root2) {
       valOfTree = this.getVal(root1, values);
-    //   console.log(valOfTree);
-    //   console.log(this.validation(root2,valOfTree, intersection));
+
+      if(valOfTree.has(root2.value)){
+        intersection.add(root2.value);
+      }else{
+        valOfTree.add(root2.value);
+      }
       this.validation(root2, valOfTree, intersection);
     }
     console.log(valOfTree, intersection);
