@@ -1,21 +1,18 @@
 'use strict';
 
-const removeDuplicate = require('../remove-duplicated');
-const LinkedList = require('../linked-list');
-const linkedList = new LinkedList();
+const leftJoin = require('../left-join');
 
-describe('test for removing duplicate in a singly linked list', ()=>{
+describe('test for leftJoin function', ()=>{
+  const map1 = new Map();
+  map1.set('a',1);
+  map1.set('b',2);
 
-  it('can remove a duplicate in the linked list', ()=>{
-    linkedList.insert(10);
-    linkedList.insert(4);
-    linkedList.insert(13);
-    linkedList.insert(14);
-    linkedList.insert(13);
-    linkedList.insert(10);
-    console.log('this is the linkedlist head next', linkedList.head.next);
-    removeDuplicate(linkedList.head);
-    expect(linkedList.valueAtK(3)).toEqual(13);
+  const map2 = new Map();
+  map2.set('a',3);
+
+  it('can left join 2 maps', ()=>{
+    const result = leftJoin(map1, map2);
+    expect(result.get('a')).toEqual([1,3]);
   });
 
 });
