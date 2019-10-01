@@ -5,7 +5,7 @@ let word = '';
 
 function getWords (str){
   const length = str.length;
-    
+
   for(let i = 0; i <= length; i++){
     if(str[i] !== ' ' && i !== length){
       word += str[i];

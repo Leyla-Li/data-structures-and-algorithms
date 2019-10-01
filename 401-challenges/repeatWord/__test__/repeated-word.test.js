@@ -1,8 +1,7 @@
 'use strict';
- 
+
 const functions = require('../repeated-word');
 const getWords = functions.getWords;
-const firstRepeated = functions.firstRepeated;
 
 describe('test for finding the first word that is repeated within the given string', ()=>{
 
@@ -20,6 +19,5 @@ describe('test for finding the first word that is repeated within the given stri
     let string = 'hello there hello there';
     expect(getWords(string)).toEqual('hello');
   });
-  
 
 });
