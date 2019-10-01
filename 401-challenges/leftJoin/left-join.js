@@ -8,13 +8,13 @@ function leftJoin (map1, map2) {
       map1.set(key, [value, null]);
     }
   }else{
-    for(var [key,value] of map1){
-      if(map2.has(key)){
-        map1.set(key, [value, map2.get(key)]);
+    for(var [key1,value1] of map1){
+      if(map2.has(key1)){
+        map1.set(key1, [value1, map2.get(key1)]);
       }else{
-        map1.set(key, [value, null]);
+        map1.set(key1, [value1, null]);
       }
-    return map1;
+  return map1;
     }
   }
 }
