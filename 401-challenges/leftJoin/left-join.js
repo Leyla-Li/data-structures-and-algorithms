@@ -14,7 +14,7 @@ function leftJoin (map1, map2) {
       }else{
         map1.set(key1, [value1, null]);
       }
-  return map1;
+      return map1;
     }
   }
 }
