@@ -27,7 +27,7 @@ class Tree {
       }else{
         this.validation (root.left, values.add(root.left.value), intersection);
       }
-      
+
     }
 
     if(root.right){
