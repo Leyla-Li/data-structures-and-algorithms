@@ -15,12 +15,10 @@ LEFT JOIN means all the values in the first hashmap are returned, and if values 
 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-I loop through the linked list so the time is O(n) and then I also create a hashmap for checking the duplicated values, and the worst cases would be there is no duplicate, then the space would be O(n) too.
+
+I loop through the map1 so the time is O(n) and then I also inserted an extra value into map1 so that the space will be O(n) too.
 This cost time: O(n) and space: O(n)
 
-## API
-<!-- Description of each method publicly available to your Linked List -->
 
-##White Boarding Solution
-![remove-duplicate-challenge-whiteboard]("./assests/linkedlist-challenge-whiteboard.jpg")
+## White Boarding Solution
+![left-join-challenge-whiteboard]("./assests/leftJoin-challenge.jpg")
