@@ -1,4 +1,4 @@
-# Insertion Sort
+# Blog Notes: Insertion Sort
 Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, insertion sort provides several advantages:
 
 * Simple implementation
@@ -9,13 +9,21 @@ More efficient in practice than most other simple quadratic (i.e., O(n2)) algori
 * In-place; i.e., only requires a constant amount O(1) of additional memory space
 Online; i.e., can sort a list as it receives it
 
-## Challenge
-Explain a the insertion sort function
+## Learning Objectives
+We will learn about how to write a function for insertion sort, which takes in an unordered array and then sort it in place and return an ordered array (from low to high).
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-The provided code use a for loop and a while loop, so the time will be O(n2), and because everything is happening in place so the space will be O(1)
-This cost time: O(n2) and space: O(n)
-
-## White Boarding Solution
+## Diagram
 ![insertion-sort-challenge-whiteboard]("./assests/insetion-sort-challenge.jpg")
+
+## Algorithm
+The function first run a for loop to go through every element in the array and then for each element, it runs a while loop to make sure that before this element, all the numbers are sorted and then go on to the next element in the array until all the numbers are sorted.
+
+## Pseudocode
+
+## Readings and References
+### Watch
+
+* [Video](https://youtu.be/OGzPmgsI-pQ)
+### Read
+
+* [What is Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
