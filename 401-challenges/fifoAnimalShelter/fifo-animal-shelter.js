@@ -9,13 +9,13 @@ class AnimalShelter {
     this.dogs = new Queue();
     this.cats = new Queue();
   }
-  
+
   enqueueAnimal(animal){
     if(animal.type === 'cat'){
       this.cats.enqueue({animal:animal, number:this.number +1});
     }
     if(animal.type === 'dog'){
-        this.dogs.enqueue({animal:animal, number:this.number +1});
+      this.dogs.enqueue({animal:animal, number:this.number +1});
     }
   }
 

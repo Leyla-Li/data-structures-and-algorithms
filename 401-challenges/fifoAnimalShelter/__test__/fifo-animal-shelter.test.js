@@ -12,7 +12,7 @@ const animalShelter = new AnimalShelter();
 describe('test if enqueue and dequeue animal work',()=>{
 
   it('enqueue an animal to the shelter', ()=>{
-    animalShelter.enqueueAnimal({type: 'dog', name: 'lucky'})
+    animalShelter.enqueueAnimal({type: 'dog', name: 'lucky'});
     let result = animalShelter.dogs.peekQ();
     expect(result.animal.name).toEqual('lucky');
 
