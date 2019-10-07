@@ -52,6 +52,36 @@ function findPathLength (root, parent, child, isParent, count){
   }
 }
 
+
+// const pathLength = (root, parent,child) => {
+//   if(root === null) {
+//     return null;
+//   }
+//   if(root.value === parent) {
+//     return countPathLength(root, child, 0);
+//   } else {
+//     return pathLength(root.left, parent, child)
+//       || pathLength(root.right, parent, child);
+//   }
+// };
+
+
+// const countPathLength = (root, child, lengthSoFar) => {
+//   if(root === null) {
+//     return null;
+//   }
+
+//   if(root.value === child) {
+//     return lengthSoFar;
+//     // Vinicio - return a truthy value AND stop the recursion
+//   } else {
+//     console.log('---------------------------');
+//     return countPathLength(root.left, child, lengthSoFar +1)
+//       || countPathLength(root.right,child, lengthSoFar + 1 );
+//   }
+// };
+
+
 //createing nodes for the tree
 // const ten = new Tree(10);
 // const seven = new Tree(7);
