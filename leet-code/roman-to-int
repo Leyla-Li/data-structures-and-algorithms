@@ -1,0 +1,70 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    let minus = ['I', 'X', 'C'];
+    let num = 0;
+    for (let i = 0; i < s.length; i++){
+        let current = s[i];
+        let next = s[i+1];
+        if(minus.includes(current)){
+            //this is ones
+            if(current === 'I'){
+                if(next === 'V'){
+                    num += 4;
+                    i++;
+                }
+                if(next === 'X'){
+                    num += 9;
+                    i++;
+                }
+            }
+            //this is tens
+            if(current === 'X'){
+                if(next === 'L'){
+                    num += 40;
+                    i++;
+                }
+                if(next === 'C'){
+                    num += 90;
+                    i++;
+                }
+            }
+            //this is hundreds
+            if(current === 'C'){
+                if(next === 'D'){
+                    num += 400;
+                    i++;
+                }
+                if(next === 'M'){
+                    num += 900;
+                    i++;
+                }
+            }
+        }else{
+            if(current = 'I'){
+                num += 1;
+            }
+            if(current = 'V'){
+                num += 5;
+            }
+            if(current = 'X'){
+                num += 10;
+            }
+            if(current = 'L'){
+                num += 50;
+            }
+            if(current = 'C'){
+                num += 100;
+            }
+            if(current = 'D'){
+                num += 500;
+            }
+            if(current = 'M'){
+                num += 1000;
+            }
+        }
+    }
+    return num;
+};
